@@ -1,13 +1,18 @@
 ---
 import type { Movie } from "./dto/Movie";
 
+
 const response = await fetch(
   `${import.meta.env.API_END_POINT}/3/movie/popular?api_key=${import.meta.env.API_KEY}&language=en-US&page=1`
 );
+
+
+
 const urlBase = import.meta.env.API_BASE_ROUTE;
 const data = await response.json();
 const moreInfo = "/moreinfo/";
 const movies: Movie[] = data.results as Movie[];
+
 ---
 
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
